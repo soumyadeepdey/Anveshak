@@ -37,6 +37,15 @@ void IITkgp_functions::ProcessingBlocks::LabelPBWithinROI(void)
 
     Rect ROI;
     ROI = pb.SelectROI(ColorLabelImage); // Selecting a region of interest
+    
+    if(ROI.x<0)
+      ROI.x = 0;
+    if(ROI.y<0)
+      ROI.y = 0;
+    if(ROI.x+ROI.width>src_ub.cols)
+      ROI.width = src_ub.cols-ROI.x;
+    if(ROI.y+ROI.height>src_ub.rows)
+      ROI.height = src_ub.rows-ROI.y;
 
     char *name = "selected roi";
     namedWindow(name,CV_WINDOW_KEEPRATIO);

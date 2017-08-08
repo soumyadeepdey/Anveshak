@@ -24,7 +24,7 @@ void writexml(char *xmlname, char *labelimage, int numlabel)
     // Visit http://en.cppreference.com/w/cpp/chrono/c/strftime
     // for more information about date/time format
     strftime(buf, sizeof(buf), "%d-%m-%Y", &tstruct);
-      fprintf(fp,"<Anveshwak vertion=\"1.0\" date=\"%s\" >\n",buf);
+      fprintf(fp,"<Anveshwak vertion=\"1.1\" date=\"%s\" >\n",buf);
 
       fprintf(fp,"\t<Document name =\"%s\" height =\"%d\" width =\"%d\">\n",imagename,src.rows,src.cols);
       fprintf(fp,"\t\t<Annotation name=\"%s\" labels=\"%d\"> \n",labelimage,numlabel);
@@ -45,6 +45,8 @@ void writexml(char *xmlname, char *labelimage, int numlabel)
       fprintf(fp,"\t\t</Annotation>\n");
       fprintf(fp,"\t</Document>\n");
       fprintf(fp,"</Anveshwak>");
+      
+      fclose(fp);
 
 }
 

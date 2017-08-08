@@ -75,7 +75,7 @@ Mat IITkgp_functions::ProcessingBlocks::FindProcessingBlocks(Mat image)
                   int temp_col = boundRect[j].width;
 
                   bool measure_dist;
-                  if((pointPolygonTest(contours_poly[j],Point(n,m),measure_dist) > 0.0) && src_binary.data[m*src_binary.cols+n]==0)
+                  if((pointPolygonTest(contours_poly[j],Point(n,m),measure_dist) >= 0.0) && src_binary.data[m*src_binary.cols+n]==0)
                   {
                       temp_pixel = temp_pixel + 1;
                       drawing.data[(m*drawing.cols+n)*3+0] = v1;

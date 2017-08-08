@@ -22,6 +22,8 @@ GroundTruth::GroundTruth(QWidget *parent) :
     Labels.push_back("Head Line");
     Labels.push_back("Signature");
     Labels.push_back("Noise");
+    Labels.push_back("MarginNoise");
+    Labels.push_back("Table");
 }
 
 GroundTruth::~GroundTruth()
@@ -37,7 +39,7 @@ void GroundTruth::on_pushButton_clicked()
     QString filename = QFileDialog::getOpenFileName(
                 this,
                 tr("Open File"),
-                "/home/soumyadeep/work/stampVarOwnData/soumya/non_overlapped/",
+                "/home/soumyadeep/work/PapersAndWriteups/Accepted/MyPapers/DAR2012/margin_noise_data/",
                 "All Files (*.*)" );
     string imagepath;
     imagepath = filename.toUtf8().constData();

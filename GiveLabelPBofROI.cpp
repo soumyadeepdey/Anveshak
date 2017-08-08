@@ -44,7 +44,7 @@ void IITkgp_functions::LabellingROI::GiveSameLabelToAllPb(Rect ROI, int label)
                         for(int n=BoundRect.x;n<BoundRect.x+BoundRect.width;n++)
                         {
                             bool measure_dist;
-                            if((pointPolygonTest(contours_poly,Point(n,m),measure_dist) > 0.0) && src_binary.data[m*src_binary.cols+n]==0)
+                            if((pointPolygonTest(contours_poly,Point(n,m),measure_dist) >= 0.0) && src_binary.data[m*src_binary.cols+n]==0)
                             {
                                 LabelImages[label].data[m*ColorLabelImage.cols+n] = 0;
                                 LabelImages[temp_posi].data[m*ColorLabelImage.cols+n] = 0;
@@ -76,7 +76,7 @@ void IITkgp_functions::LabellingROI::GiveSameLabelToAllPb(Rect ROI, int label)
                         for(int n=BoundRect.x;n<BoundRect.x+BoundRect.width;n++)
                         {
                             bool measure_dist;
-                            if((pointPolygonTest(contours_poly,Point(n,m),measure_dist) > 0.0) && src_binary.data[m*src_binary.cols+n]==0)
+                            if((pointPolygonTest(contours_poly,Point(n,m),measure_dist) >= 0.0) && src_binary.data[m*src_binary.cols+n]==0)
                             {
                                 LabelImages[label].data[m*ColorLabelImage.cols+n] = 0;
                                 LabelImageInOne.data[m*ColorLabelImage.cols+n] = label;
@@ -128,7 +128,7 @@ void IITkgp_functions::LabellingROI::GiveSameLabelToUnlabelledPB(Rect ROI, int l
                         for(int n=BoundRect.x;n<BoundRect.x+BoundRect.width;n++)
                         {
                             bool measure_dist;
-                            if((pointPolygonTest(contours_poly,Point(n,m),measure_dist) > 0.0) && src_binary.data[m*src_binary.cols+n]==0)
+                            if((pointPolygonTest(contours_poly,Point(n,m),measure_dist) >= 0.0) && src_binary.data[m*src_binary.cols+n]==0)
                             {
                                 LabelImages[label].data[m*ColorLabelImage.cols+n] = 0;
                                 LabelImageInOne.data[m*ColorLabelImage.cols+n] = label;
@@ -201,7 +201,7 @@ void IITkgp_functions::LabellingROI::GiveDiffLabelToPB(Rect ROI)
                             for(int n=BoundRect.x;n<BoundRect.x+BoundRect.width;n++)
                             {
                                 bool measure_dist;
-                                if((pointPolygonTest(contours_poly,Point(n,m),measure_dist) > 0.0) && src_binary.data[m*src_binary.cols+n]==0)
+                                if((pointPolygonTest(contours_poly,Point(n,m),measure_dist) >= 0.0) && src_binary.data[m*src_binary.cols+n]==0)
                                 {
                                     LabelImages[selectedlabel].data[m*ColorLabelImage.cols+n] = 0;
                                     LabelImages[PBLabel[k]].data[m*ColorLabelImage.cols+n] = 0;
@@ -243,7 +243,7 @@ void IITkgp_functions::LabellingROI::GiveDiffLabelToPB(Rect ROI)
                         for(int n=BoundRect.x;n<BoundRect.x+BoundRect.width;n++)
                         {
                             bool measure_dist;
-                            if((pointPolygonTest(contours_poly,Point(n,m),measure_dist) > 0.0) && src_binary.data[m*src_binary.cols+n]==0)
+                            if((pointPolygonTest(contours_poly,Point(n,m),measure_dist) >= 0.0) && src_binary.data[m*src_binary.cols+n]==0)
                             {
                                 LabelImages[selectedlabel].data[m*ColorLabelImage.cols+n] = 0;
                                 LabelImageInOne.data[m*ColorLabelImage.cols+n] = selectedlabel;
