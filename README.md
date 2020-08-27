@@ -2,6 +2,7 @@
 A Groundtruth generation Tool for Document images
 
 For Details refer to http://www.facweb.iitkgp.ernet.in/~jay/anveshak/anveshak.html
+https://arxiv.org/pdf/1708.02831.pdf
 
 Cite
 
